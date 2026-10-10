@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.coverage.*
+
+# Generated artifacts (never commit secrets or weights)
+benchmark.json
+kg_synthetic.tsv
+_tmp_bench.json
+*.npy
+*.npz
+*.pkl
+
+# Secrets
+.env
+*.key
+*.pem
+secrets/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

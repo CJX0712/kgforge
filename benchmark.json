@@ -1,0 +1,170 @@
+{
+  "config": {
+    "dim": 32,
+    "epochs": 400,
+    "batch_size": 64,
+    "learning_rate": 0.05,
+    "margin": 3.0,
+    "reg": 0.0001,
+    "grad_clip": 1.0,
+    "negatives": 1,
+    "seed": 7,
+    "n_entities": 300,
+    "n_relations": 8,
+    "n_train": 1000,
+    "n_valid": 200,
+    "n_test": 200,
+    "difficulty": "medium",
+    "top_k": [
+      1,
+      3,
+      10
+    ],
+    "use_complex": true,
+    "use_rotate": true
+  },
+  "quality_threshold_rel": 0.05,
+  "seeds": [
+    7,
+    42,
+    123
+  ],
+  "elapsed_sec": 41.057,
+  "model_names": [
+    "transe",
+    "distmult",
+    "complex",
+    "rotate"
+  ],
+  "model_mrr_mean": {
+    "transe": 0.046816,
+    "distmult": 0.171676,
+    "complex": 0.152429,
+    "rotate": 0.082782
+  },
+  "model_mrr_std": {
+    "transe": 0.010264,
+    "distmult": 0.009434,
+    "complex": 0.023592,
+    "rotate": 0.011991
+  },
+  "fuse_mrr_mean": 0.201817,
+  "fuse_mrr_std": 0.0277,
+  "best_base": "distmult",
+  "best_base_mrr_mean": 0.171676,
+  "delta_abs": 0.030141,
+  "delta_rel": 0.175569,
+  "significance_threshold": 0.018567,
+  "significant": true,
+  "ablation_drop_one_mrr_mean": {
+    "transe": 0.192599,
+    "distmult": 0.184233,
+    "complex": 0.185526,
+    "rotate": 0.199097
+  },
+  "ablation_strategy_mrr_mean": {
+    "mean_rr": 0.187289,
+    "rrf": 0.201817,
+    "max_consensus": 0.116598
+  },
+  "relation_type_mrr": {
+    "antisymmetric": 0.019292,
+    "composition": 0.059991,
+    "onetomany": 0.021054,
+    "symmetric": 0.704204
+  },
+  "worst_relation_types": [
+    "antisymmetric",
+    "onetomany",
+    "composition"
+  ],
+  "failure_cases": [
+    {
+      "relation_type": "antisymmetric",
+      "mrr": 0.019292,
+      "attribution": "DistMult 结构对称、方向盲，TransE/RotatE 互补弥补"
+    },
+    {
+      "relation_type": "onetomany",
+      "mrr": 0.021054,
+      "attribution": "高扇出稀释信号，所有模型排名熵增大"
+    },
+    {
+      "relation_type": "composition",
+      "mrr": 0.059991,
+      "attribution": "RotatE 旋转加法建模组合，其余模型较弱"
+    }
+  ],
+  "per_seed": [
+    {
+      "seed": 7,
+      "n_train": 1200,
+      "n_test": 200,
+      "per_model_mrr": {
+        "transe": 0.054587,
+        "distmult": 0.182526,
+        "complex": 0.175109,
+        "rotate": 0.094912
+      },
+      "fuse_mrr": 0.233498,
+      "fuse_hits": {
+        "1": 0.2125,
+        "3": 0.2275,
+        "10": 0.25
+      },
+      "ablation_mrr": {
+        "transe": 0.224996,
+        "distmult": 0.219229,
+        "complex": 0.224648,
+        "rotate": 0.21677
+      }
+    },
+    {
+      "seed": 42,
+      "n_train": 1200,
+      "n_test": 200,
+      "per_model_mrr": {
+        "transe": 0.05068,
+        "distmult": 0.165413,
+        "complex": 0.154158,
+        "rotate": 0.082501
+      },
+      "fuse_mrr": 0.189782,
+      "fuse_hits": {
+        "1": 0.165,
+        "3": 0.185,
+        "10": 0.2125
+      },
+      "ablation_mrr": {
+        "transe": 0.176876,
+        "distmult": 0.17618,
+        "complex": 0.171419,
+        "rotate": 0.193798
+      }
+    },
+    {
+      "seed": 123,
+      "n_train": 1200,
+      "n_test": 200,
+      "per_model_mrr": {
+        "transe": 0.035181,
+        "distmult": 0.167088,
+        "complex": 0.128019,
+        "rotate": 0.070934
+      },
+      "fuse_mrr": 0.18217,
+      "fuse_hits": {
+        "1": 0.155,
+        "3": 0.1775,
+        "10": 0.2175
+      },
+      "ablation_mrr": {
+        "transe": 0.175925,
+        "distmult": 0.157289,
+        "complex": 0.160512,
+        "rotate": 0.186722
+      }
+    }
+  ],
+  "passes_threshold": true
+}

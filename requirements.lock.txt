@@ -1,0 +1,22 @@
+# Exact reproducible environment (`pip install -r requirements.lock.txt`).
+# Runtime has a SINGLE dependency: numpy. Everything else is dev/CI only.
+# Hand-written name==version (pip freeze can embed local file:// paths, which
+# would make this lock un-installable on a clean machine).
+
+# ---- runtime ----
+numpy==2.5.3
+
+# ---- test ----
+pytest==9.1.1
+pytest-cov==7.1.0
+coverage==7.16.2
+iniconfig==2.3.1
+pluggy==1.6.0
+packaging==26.3
+
+# ---- lint ----
+ruff==0.16.10
+
+# ---- console output ----
+Pygments==2.21.0
+colorama==0.4.6

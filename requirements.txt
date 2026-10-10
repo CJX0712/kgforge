@@ -1,0 +1,7 @@
+# Runtime (deliberately minimal: pure NumPy, offline, CPU-only — no model download)
+numpy==2.5.3
+
+# Dev / CI
+pytest==9.1.1
+pytest-cov==7.1.0
+ruff==0.16.10
