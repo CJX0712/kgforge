@@ -18,7 +18,8 @@ htmlcov/
 .coverage.*
 
 # Generated artifacts (never commit secrets or weights)
-benchmark.json
+# NOTE: benchmark.json IS committed on purpose — it is the reproducible evidence
+# artifact linked from README, and it is regenerated identically by run_demo.py.
 kg_synthetic.tsv
 _tmp_bench.json
 *.npy
