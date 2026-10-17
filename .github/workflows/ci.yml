@@ -11,6 +11,7 @@ env:
   PYTHONIOENCODING: "utf-8"
 
 
+jobs:
   lint:
     name: lint (ruff hard gate)
     runs-on: ubuntu-latest
